@@ -117,4 +117,20 @@ def TrackOrder(request):
 
     return render(request,'home/trackorder.html')
 
+def search(request):
+    searchquery = request.GET['search']
+    if len(searchquery)>200:
+        allposts = Post.objects.none()
+    if len(searchquery)<4:
+        allposts = Post.objects.none()
+        messages.error(request,'Please enter more than 4 characters')
+        redirect('/')
+    else:    
+        allpoststitle = books.objects.filter(book_name__icontains=searchquery)
+        allpostscontent = books.objects.filter(category__icontains=searchquery)
+        allposts = allpoststitle.union(allpostscontent)
+        context = {'allposts':allposts,'search':searchquery}
+        return render(request,'home/search.html',context)
+    return render(request,'home/search.html')
+
     

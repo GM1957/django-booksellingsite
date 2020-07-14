@@ -39,9 +39,10 @@
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search">
+      {% csrf_token %}
+        <input class="form-control mr-sm-2" name="search" id="search" type="search" placeholder="Search">
         <button class="btn btn-outline-danger my-2 mx-2 my-sm-0" type="submit">Search</button>
-
+      </form>
 <a tabindex="0" type="button" id='popcart' class="btn btn-warning" data-trigger="focus" role="button" data-html="true" data-container="body" data-toggle="popover" data-placement="bottom" title="All Cart Items" data-content="Vivamus
 sagittis lacus vel augue laoreet rutrum faucibus.">
   <b>Cart(<span id='cart'>0</span>)</b>
@@ -49,7 +50,7 @@ sagittis lacus vel augue laoreet rutrum faucibus.">
 <button type="button " id="yoclear" class="btn btn-outline-primary mx-2">Clear Cart</button>
 
 
-      </form>
+     
 
       {% if user.is_authenticated %}
       <div class="btn-group">
