@@ -14,6 +14,7 @@ urlpatterns = [
     path('savebook', views.savebook),
     path('loginsignup',views.loginsignup,name='loginsignup'),
     path('TrackOrder',views.TrackOrder,name='TrackOrder'),
+    path('search',views.search,name='search'),
     path('checkout',views.checkout,name='checkout'),
 
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

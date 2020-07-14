@@ -38,7 +38,7 @@
           <a class="nav-link" href="TrackOrder">Track Order</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
+      <form action="search" method="get" class="form-inline my-2 my-lg-0">
       {% csrf_token %}
         <input class="form-control mr-sm-2" name="search" id="search" type="search" placeholder="Search">
         <button class="btn btn-outline-danger my-2 mx-2 my-sm-0" type="submit">Search</button>
